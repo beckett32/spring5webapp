@@ -20,13 +20,13 @@ public class Author implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String firstName;
-    private String last_name;
+    private String lastName;
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
 
     public Author(String firstName, String last_name) {
         this.firstName = firstName;
-        this.last_name = last_name;
+        lastName = last_name;
     }
 
     @Override
@@ -48,6 +48,6 @@ public class Author implements Serializable {
 
     @Override
     public String toString() {
-        return "Author{" + "id=" + id + ", firstName='" + firstName + '\'' + ", last_name='" + last_name + '\'' + ", books=" + books + '}';
+        return "Author{" + "id=" + id + ", firstName='" + firstName + '\'' + ", last_name='" + lastName + '}';
     }
 }
